@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IP Address Generator</title>
+  <style>
+    #error {
+      color: red;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <button id="generate-ip">Generate IP Address</button>
+  <div id="ip-address"></div>
+  <div id="error"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
