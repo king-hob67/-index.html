@@ -1,0 +1,23 @@
+const generateIpButton = document.getElementById('generate-ip');
+const ipAddressDiv = document.getElementById('ip-address');
+
+import ipAddressValidator from 'ip-address';
+
+generateIpButton.addEventListener('click', async () => {
+  try {
+    const response = await fetch('https://api.ipify.org?format=json');
+    const data = await response.json();
+    const ipAddress = data.ip;
+
+    // Validate IP address
+    const isValid = ipAddressValidator.isValid(ipAddress);
+
+    if (isValid) {
+      ipAddressDiv.innerText = `Your IP Address is: ${ipAddress}`;
+    } else {
+      ipAddressDiv.innerText = `Invalid IP Address`;
+    }
+  } catch (error) {
+    console.error(error);
+  }
+});
